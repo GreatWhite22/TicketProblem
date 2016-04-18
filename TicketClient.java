@@ -20,10 +20,12 @@ class ThreadedTicketClient implements Runnable {
 		System.out.flush();
 		try {
 			Socket echoSocket = new Socket(hostname, TicketServer.PORT);
-			// PrintWriter out =
-			new PrintWriter(echoSocket.getOutputStream(), true);
-			BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
-			BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
+			PrintWriter out = 
+					new PrintWriter(echoSocket.getOutputStream(), true);
+			BufferedReader in = 
+					new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));
+			BufferedReader stdIn = 
+					new BufferedReader(new InputStreamReader(System.in));
 			echoSocket.close();
 		} catch (Exception e) {
 			e.printStackTrace();
