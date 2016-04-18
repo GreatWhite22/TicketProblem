@@ -16,10 +16,6 @@ public class Seat {
 		return this.occupied;
 	}
 	
-	public void reserve(int seatNumber, char row){
-		occupied = true;
-	}
-	
 	public void markAvailableSeatTaken(){
 		this.occupied = true;
 	}

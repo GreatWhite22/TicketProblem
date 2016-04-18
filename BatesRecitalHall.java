@@ -29,11 +29,15 @@ public class BatesRecitalHall {
 		for(int i = 0; i < 13; i++){
 			for(int j = 0; j < 7; j++){
 				if(!seats[i][j].isReserved()){
+					seats[i][j].markAvailableSeatTaken();
+					seats[i][j].printTicketSeat();
 					return seats[i][j];
 				}
 			}
 			for(int k = 21; k < 28; k++){
 				if(!seats[i][k].isReserved()){
+					seats[i][k].markAvailableSeatTaken();
+					seats[i][k].printTicketSeat();
 					return seats[i][k];
 				}
 			}
@@ -41,6 +45,8 @@ public class BatesRecitalHall {
 		for(int i = 13; i < 26; i++){
 			for(int j = 7; j < 21; j++){
 				if(!seats[i][j].isReserved()){
+					seats[i][j].markAvailableSeatTaken();
+					seats[i][j].printTicketSeat();
 					return seats[i][j];
 				}
 			}
@@ -48,11 +54,15 @@ public class BatesRecitalHall {
 		for(int i = 13; i < 26; i++){
 			for(int j = 0; j < 7; j++){
 				if(!seats[i][j].isReserved()){
+					seats[i][j].markAvailableSeatTaken();
+					seats[i][j].printTicketSeat();
 					return seats[i][j];
 				}
 			}
 			for(int k = 21; k < 28; k++){
 				if(!seats[i][k].isReserved()){
+					seats[i][k].markAvailableSeatTaken();
+					seats[i][k].printTicketSeat();
 					return seats[i][k];
 				}
 			}

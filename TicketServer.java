@@ -28,6 +28,7 @@ class ThreadedTicketServer implements Runnable {
 	String threadname = "X";
 	String testcase;
 	TicketClient sc;
+	BatesRecitalHall hall = new BatesRecitalHall();
 
 	public void run() {
 		// TODO 422C
@@ -37,15 +38,11 @@ class ThreadedTicketServer implements Runnable {
 			Socket clientSocket = serverSocket.accept();
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+			hall.bestAvailable();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-	}
-	
-	public boolean[][] bestAvailable(){
-		return null;
-		
 	}
 }
