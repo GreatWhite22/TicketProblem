@@ -30,7 +30,6 @@ public class TestTicketOffice {
 		TicketClient client2 = new TicketClient("localhost", "c2");
 		client1.requestTicket();
 		client2.requestTicket();
-		
 	}
 
 	@Test
@@ -44,6 +43,10 @@ public class TestTicketOffice {
 		TicketClient c2 = new TicketClient("nonconc2");
 		TicketClient c3 = new TicketClient("nonconc3");
 		c1.requestTicket();
+		c2.requestTicket();
+		c3.requestTicket();
+		while(!c1.requestTicket()){
+		}
 		c2.requestTicket();
 		c3.requestTicket();
 	}
@@ -60,17 +63,20 @@ public class TestTicketOffice {
 		final TicketClient c3 = new TicketClient("conc3");
 		Thread t1 = new Thread() {
 			public void run() {
-				c1.requestTicket();
+				while(!c1.requestTicket()){
+				}
 			}
 		};
 		Thread t2 = new Thread() {
 			public void run() {
-				c2.requestTicket();
+				while(!c2.requestTicket()){
+				}
 			}
 		};
 		Thread t3 = new Thread() {
 			public void run() {
-				c3.requestTicket();
+				while(!c3.requestTicket()){
+				}
 			}
 		};
 		t1.start();
